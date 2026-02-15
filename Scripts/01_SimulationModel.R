@@ -79,7 +79,7 @@ probs <- cbind(p_surv, p_aban, p_pred, p_flood)
 probs <- probs / rowSums(probs)
 
 # Simulate the observed fate for each nest using a multinomial distribution.
-# Each nest can only have one outcome.
+# Each nest can only have one outcome
 Fate <- matrix(0, n, 4)
 for(i in 1:n){
   Fate[i,] <- rmultinom(1, size = 1, prob = probs[i,])
